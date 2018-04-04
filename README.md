@@ -33,14 +33,22 @@ Or to strip all locales except “en”, “es-us” and “fa“
 ```js
 {
   modules: [
-    ['@nuxtjs/moment', ['es-us', 'fa']]
+    ['@nuxtjs/moment', ['fa']]
  ]
 }
 ```
 
 **Note:** “en” is built into Moment and can’t be removed)
 
-**Note:** You can also directly pass [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin) options as the second (options) parameter.
+### Disable plugin
+
+This module also registers a nuxt plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable thiis behaviour using an object config:
+
+```js
+  modules: [
+    ['@nuxtjs/moment', { locales: ['es-us', 'ru'], plugin: false }]
+ ]
+```
 
 ## Development
 
