@@ -42,7 +42,7 @@ Or to strip all locales except “en”, “es-us” and “fa“
 
 ### Disable plugin
 
-This module also registers a nuxt plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable thiis behaviour using an object config:
+This module also registers a nuxt plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using an object config:
 
 ```js
   modules: [
