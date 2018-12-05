@@ -1,9 +1,9 @@
-jest.setTimeout(60000)
+jest.setTimeout(120000)
 
 const { Nuxt, Builder } = require('nuxt-edge')
 const config = require('./fixture/nuxt.config')
 
-const url = path => `http://localhost:5555${path}`
+const url = path => `http://localhost:3000${path}`
 
 describe('basic', () => {
   let nuxt
@@ -11,7 +11,7 @@ describe('basic', () => {
   beforeAll(async () => {
     nuxt = new Nuxt(config)
     await new Builder(nuxt).build()
-    await nuxt.listen(5555)
+    await nuxt.listen(3000)
   })
 
   afterAll(async () => {
