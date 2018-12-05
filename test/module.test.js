@@ -1,5 +1,6 @@
-const { Nuxt, Builder } = require('nuxt-edge')
+jest.setTimeout(60000)
 
+const { Nuxt, Builder } = require('nuxt-edge')
 const config = require('./fixture/nuxt.config')
 
 const url = path => `http://localhost:5555${path}`
@@ -11,7 +12,7 @@ describe('basic', () => {
     nuxt = new Nuxt(config)
     await new Builder(nuxt).build()
     await nuxt.listen(5555)
-  }, 60000)
+  })
 
   afterAll(async () => {
     await nuxt.close()
