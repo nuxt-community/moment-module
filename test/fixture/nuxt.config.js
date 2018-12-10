@@ -5,6 +5,9 @@ module.exports = {
   srcDir: __dirname,
   dev: false,
   modules: [
-    ['@@', [ 'fa' ]]
+    ['@@', {
+      locales: ['fa', 'de'],
+      defaultLocale: 'de'
+    }]
   ]
 }

@@ -1,11 +1,16 @@
 <template>
-<div>
+  <div>
     Works!
-</div>
+    <p v-text="str"/>
+  </div>
 </template>
 
 <script>
-import moment from 'moment';
-
-export default {}
+export default {
+  asyncData(ctx) {
+    return {
+      str: ctx.app.$moment('12-25-1995', 'MM-DD-YYYY').format('MMMM')
+    }
+  }
+}
 </script>
