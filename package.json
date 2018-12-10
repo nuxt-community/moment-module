@@ -40,7 +40,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.0.0",
     "jest": "23.6.0",
-    "nuxt-edge": "2.4.0-25739901.6d8aeec",
+    "nuxt-edge": "2.4.0-25740740.f0cb654",
     "standard-version": "4.4.0"
   },
   "dependencies": {
