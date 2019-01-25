@@ -44,7 +44,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.0.0",
-    "jest": "23.6.0",
+    "jest": "24.0.0",
     "nuxt-edge": "2.4.0-25740740.f0cb654",
     "standard-version": "4.4.0"
   },
