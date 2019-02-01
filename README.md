@@ -36,6 +36,17 @@ Or to strip all locales except “en”, “es-us” and “fa“
     ['@nuxtjs/moment', ['fa']]
  ]
 }
+
+// or
+
+{
+  modules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    locales: ['fa']
+  }
+}
 ```
 
 **Note:** “en” is built into Moment and can’t be removed)
