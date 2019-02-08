@@ -14,6 +14,7 @@
     }
   ],
   "main": "lib/module.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/nuxt-community/moment-module",
   "publishConfig": {
     "access": "public"
@@ -25,7 +26,8 @@
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "files": [
-    "lib"
+    "lib",
+    "index.d.ts"
   ],
   "jest": {
     "testEnvironment": "node",
