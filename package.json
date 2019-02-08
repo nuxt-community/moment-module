@@ -14,7 +14,7 @@
     }
   ],
   "main": "lib/module.js",
-  "types": "index.d.ts",
+  "types": "types/index.d.ts",
   "repository": "https://github.com/nuxt-community/moment-module",
   "publishConfig": {
     "access": "public"
@@ -27,7 +27,7 @@
   },
   "files": [
     "lib",
-    "index.d.ts"
+    "types/*.d.ts"
   ],
   "jest": {
     "testEnvironment": "node",
