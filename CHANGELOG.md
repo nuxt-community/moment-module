@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/nuxt-community/moment-module/compare/v1.1.0...v1.2.0) (2019-02-08)
+
+
+### Features
+
+* **types:** add typescript definitions ([#17](https://github.com/nuxt-community/moment-module/issues/17)) ([231e8a7](https://github.com/nuxt-community/moment-module/commit/231e8a7))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/nuxt-community/moment-module/compare/v1.0.0...v1.1.0) (2018-12-10)
 
