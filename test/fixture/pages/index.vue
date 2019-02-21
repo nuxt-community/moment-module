@@ -1,7 +1,7 @@
 <template>
   <div>
     Works!
-    <p v-text="str"/>
+    <p v-text="str" />
   </div>
 </template>
 

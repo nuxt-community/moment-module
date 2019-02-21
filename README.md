@@ -1,22 +1,23 @@
 # @nuxtjs/moment
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@nuxtjs/moment/latest.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/moment)
-[![npm](https://img.shields.io/npm/dt/@nuxtjs/moment.svg?style=flat-square)](https://npmjs.com/package/@nuxtjs/moment)
-[![CircleCI](https://img.shields.io/circleci/project/github/nuxt-community/moment-module.svg?style=flat-square)](https://circleci.com/gh/nuxt-community/moment-module)
-[![Codecov](https://img.shields.io/codecov/c/github/nuxt-community/moment-module.svg?style=flat-square)](https://codecov.io/gh/nuxt-community/moment-module)
-[![Dependencies](https://david-dm.org/nuxt-community/moment-module/status.svg?style=flat-square)](https://david-dm.org/nuxt-community/moment-module)
-[![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
 
-Easily remove unused Moment.js locales in Nuxt.js projects using [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin).
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Codecov][codecov-src]][codecov-href]
+[![Dependencies][david-dm-src]][david-dm-href]
+[![Standard JS][standard-js-src]][standard-js-href]
 
-<div align="center">
-  <img src="./assets/img1.png" width="600px">
-</div>
+> Easily remove unused Moment.js locales in Nuxt.js projects using [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin).
 
-## Usage
+[📖 **Release Notes**](./CHANGELOG.md)
 
-`yarn add moment @nuxtjs/moment` OR `npm i moment @nuxtjs/moment`
+<p align="center"><img src="./assets/img1.png" width="600px"></p>
 
-Add `@nuxtjs/moment` to `modules` section of `nuxt.config.js`
+## Setup
+
+1. Add the `@nuxtjs/moment` dependency with `yarn` or `npm` to your project
+2. Add `@nuxtjs/moment` to the `modules` section of `nuxt.config.js`
+3. Configure it:
 
 To strip all locales except “en”:
 
@@ -24,7 +25,7 @@ To strip all locales except “en”:
 {
   modules: [
     '@nuxtjs/moment',
- ]
+  ]
 }
 ```
 
@@ -34,7 +35,7 @@ Or to strip all locales except “en”, “es-us” and “fa“
 {
   modules: [
     ['@nuxtjs/moment', ['fa']]
- ]
+  ]
 }
 
 // or
@@ -74,9 +75,9 @@ This module also registers a nuxt plugin to include all needed locales as well a
 
 ## Development
 
-- Clone this repository
-- Install dependnecies using `yarn install` or `npm install`
-- Start development server using `npm run dev`
+1. Clone this repository
+2. Install dependencies using `yarn install` or `npm install`
+3. Start development server using `npm run dev`
 
 ## License
 
@@ -84,4 +85,18 @@ This module also registers a nuxt plugin to include all needed locales as well a
 
 Thanks [Ivan Akulov](https://github.com/iamakulov) for making this awesome webpack plugin. 💖
 
-Copyright (c) Nuxt Community.
+Copyright (c) Nuxt Community
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/moment.svg?style=flat-square
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/moment
+[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/moment/latest.svg?style=flat-square
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/moment
+[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/moment-module.svg?style=flat-square
+[circle-ci-href]: https://circleci.com/gh/nuxt-community/moment-module
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/moment-module.svg?style=flat-square
+[codecov-href]: https://codecov.io/gh/nuxt-community/moment-module
+[david-dm-src]: https://david-dm.org/nuxt-community/moment-module/status.svg?style=flat-square
+[david-dm-href]: https://david-dm.org/nuxt-community/moment-module
+[standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
+[standard-js-href]: https://standardjs.com
