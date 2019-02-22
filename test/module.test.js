@@ -19,6 +19,12 @@ const setupNuxt = async (config) => {
 }
 
 describe('module', () => {
+  afterEach(async () => {
+    if (nuxt) {
+      await nuxt.close()
+    }
+  })
+
   test('plugin works', async () => {
     nuxt = await setupNuxt(config)
 
@@ -76,11 +82,5 @@ describe('module', () => {
 
     expect(window.$nuxt.$moment).toBeUndefined()
     expect(div).toContain('Works!')
-  })
-
-  afterEach(async () => {
-    if (nuxt) {
-      await nuxt.close()
-    }
   })
 })
