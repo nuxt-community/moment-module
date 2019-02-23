@@ -1,33 +1,86 @@
-jest.setTimeout(120000)
+jest.setTimeout(60000)
 
 const { Nuxt, Builder } = require('nuxt-edge')
+const getPort = require('get-port')
+
 const config = require('./fixture/nuxt.config')
 
-const url = path => `http://localhost:3000${path}`
+let nuxt, port
 
-describe('basic', () => {
-  let nuxt
+const url = path => `http://localhost:${port}${path}`
 
-  beforeAll(async () => {
-    nuxt = new Nuxt(config)
-    await new Builder(nuxt).build()
-    await nuxt.listen(3000)
+const setupNuxt = async (config) => {
+  const nuxt = new Nuxt(config)
+  await new Builder(nuxt).build()
+  port = await getPort()
+  await nuxt.listen(port)
+
+  return nuxt
+}
+
+describe('module', () => {
+  afterEach(async () => {
+    if (nuxt) {
+      await nuxt.close()
+    }
   })
 
-  afterAll(async () => {
-    await nuxt.close()
-  })
+  test('plugin works', async () => {
+    nuxt = await setupNuxt(config)
 
-  test('moment plugin works', async () => {
     const window = await nuxt.renderAndGetWindow(url('/'))
-    expect(window.$nuxt.$moment).toBeDefined()
-
     const month = window.document.querySelector('p').textContent
+
+    expect(window.$nuxt.$moment).toBeDefined()
+    expect(window.$nuxt.$moment.locales()).toEqual(['en'])
+    expect(month).toBe('December')
+  })
+
+  test('array values', async () => {
+    nuxt = await setupNuxt({
+      ...config,
+      modules: [
+        [require('../'), ['fa']]
+      ]
+    })
+
+    const window = await nuxt.renderAndGetWindow(url('/'))
+    const month = window.document.querySelector('p').textContent
+
+    expect(window.$nuxt.$moment).toBeDefined()
+    expect(window.$nuxt.$moment.locales()).toEqual(['en', 'fa'])
+    expect(month).toBe('December')
+  })
+
+  test('object values', async () => {
+    nuxt = await setupNuxt({
+      ...config,
+      moment: {
+        locales: ['fa', 'de'],
+        defaultLocale: 'de'
+      }
+    })
+
+    const window = await nuxt.renderAndGetWindow(url('/'))
+    const month = window.document.querySelector('p').textContent
+
+    expect(window.$nuxt.$moment).toBeDefined()
+    expect(window.$nuxt.$moment.locales()).toEqual(['en', 'fa', 'de'])
     expect(month).toBe('Dezember')
   })
 
-  test('defined locales are set', async () => {
-    const window = await nuxt.renderAndGetWindow(url('/'))
-    expect(window.$nuxt.$moment.locales()).toEqual(['en', 'fa', 'de'])
+  test('plugin disabled', async () => {
+    nuxt = await setupNuxt({
+      ...config,
+      moment: {
+        plugin: false
+      }
+    })
+
+    const window = await nuxt.renderAndGetWindow(url('/disabled'))
+    const div = window.document.querySelector('div').textContent
+
+    expect(window.$nuxt.$moment).toBeUndefined()
+    expect(div).toContain('Works!')
   })
 })

@@ -4,11 +4,10 @@ module.exports = {
   rootDir: resolve(__dirname, '../..'),
   buildDir: resolve(__dirname, '.nuxt'),
   srcDir: __dirname,
-  dev: false,
+  render: {
+    resourceHints: false
+  },
   modules: [
-    ['@@', {
-      locales: ['fa', 'de'],
-      defaultLocale: 'de'
-    }]
+    { handler: require('../../') }
   ]
 }
