@@ -4,6 +4,7 @@ const { Nuxt, Builder } = require('nuxt-edge')
 const getPort = require('get-port')
 
 const config = require('./fixture/nuxt.config')
+config.dev = false
 
 let nuxt, port
 
