@@ -24,7 +24,7 @@ To strip all locales except “en”:
 ```js
 {
   modules: [
-    '@nuxtjs/moment',
+    '@nuxtjs/moment'
   ]
 }
 ```
@@ -58,9 +58,9 @@ You can set a default locale via the `defaultLocale` option. It must be included
 int the locales you keep (or `'en'`) and will only work when using the plugin option.
 
 ```js
-  modules: [
-    ['@nuxtjs/moment', { locales: ['de'], defaultLocale: 'de' }]
- ]
+modules: [
+  ['@nuxtjs/moment', { locales: ['de'], defaultLocale: 'de' }]
+]
 ```
 
 ### Disable plugin
@@ -68,9 +68,9 @@ int the locales you keep (or `'en'`) and will only work when using the plugin op
 This module also registers a nuxt plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using an object config:
 
 ```js
-  modules: [
-    ['@nuxtjs/moment', { locales: ['es-us', 'ru'], plugin: false }]
- ]
+modules: [
+  ['@nuxtjs/moment', { locales: ['es-us', 'ru'], plugin: false }]
+]
 ```
 
 ## Development
