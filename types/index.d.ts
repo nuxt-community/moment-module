@@ -7,6 +7,13 @@ declare module '@nuxt/vue-app' {
   }
 }
 
+// Nuxt 2.9+
+declare module '@nuxt/types' {
+  interface Context {
+    $moment(input?: MomentInput, format?: MomentFormatSpecification, language?: string, strict?: boolean): Moment
+  }
+}
+
 declare module 'vue/types/vue' {
   interface Vue {
     $moment(input?: MomentInput, format?: MomentFormatSpecification, language?: string, strict?: boolean): Moment
