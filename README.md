@@ -7,41 +7,56 @@
 [![Dependencies][david-dm-src]][david-dm-href]
 [![Standard JS][standard-js-src]][standard-js-href]
 
-> Easily remove unused Moment.js locales in Nuxt.js projects using [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin).
+> Efficient Moment.js integration for Nuxt.js
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
 <p align="center"><img src="./assets/img1.png" width="600px"></p>
 
+## Features
+
+- Remove unused Moment.js locales using [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin) for much less bundle size.
+- Inject `$moment` to the context everywhere.
+
 ## Setup
 
-1. Add the `@nuxtjs/moment` dependency with `yarn` or `npm` to your project
-2. Add `@nuxtjs/moment` to the `modules` section of `nuxt.config.js`
-3. Configure it:
+Install `@nuxtjs/moment` to your project:
 
-To strip all locales except “en”:
+```bash
+yarn add --dev @nuxtjs/moment
+# OR
+npm i --save-dev @nuxtjs/moment
+```
+
+- Add `@nuxtjs/moment` to the `buildModules` section of `nuxt.config.js`
 
 ```js
-{
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ]
+}
+```
+
+**NOTE:** If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
+
+## Configuration
+
+To strip all locales except `en`:
+
+```js
+export default {
   modules: [
     '@nuxtjs/moment'
   ]
 }
 ```
 
-Or to strip all locales except “en”, “es-us” and “fa“
+To strip all locales except `en`, `fr` and `fa`:
 
 ```js
-{
-  modules: [
-    ['@nuxtjs/moment', ['fa']]
-  ]
-}
-
-// or
-
-{
-  modules: [
+export default {
+  buildModules: [
     '@nuxtjs/moment'
   ],
   moment: {
@@ -50,7 +65,7 @@ Or to strip all locales except “en”, “es-us” and “fa“
 }
 ```
 
-**Note:** “en” is built into Moment and can’t be removed)
+**Note:** `en` is built into Moment and can’t be removed!
 
 ### Set default locale
 
@@ -58,19 +73,30 @@ You can set a default locale via the `defaultLocale` option. It must be included
 int the locales you keep (or `'en'`) and will only work when using the plugin option.
 
 ```js
-modules: [
-  ['@nuxtjs/moment', { locales: ['de'], defaultLocale: 'de' }]
-]
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    defaultLocale: 'de'
+    locales: ['de']
+  }
+}
 ```
 
 ### Disable plugin
 
-This module also registers a nuxt plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using an object config:
+This module also registers a plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using `plugin: false`.
 
 ```js
-modules: [
-  ['@nuxtjs/moment', { locales: ['es-us', 'ru'], plugin: false }]
-]
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    plugin: false
+  }
+}
 ```
 
 ## Development
