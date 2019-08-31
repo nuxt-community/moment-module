@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "moment": "^2.24.0",
-    "moment-locales-webpack-plugin": "^1.0.7"
+    "moment-locales-webpack-plugin": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "latest",
