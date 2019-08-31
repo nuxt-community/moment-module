@@ -1,6 +1,18 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.3.0](https://github.com/nuxt-community/moment-module/compare/v1.2.0...v1.3.0) (2019-08-31)
+
+
+### Bug Fixes
+
+* **module:** lazy-require `moment-locales-webpack-plugin` ([7c2ed2f](https://github.com/nuxt-community/moment-module/commit/7c2ed2f))
+
+
+### Features
+
+* provide nuxt 2.9 compatible types ([#36](https://github.com/nuxt-community/moment-module/issues/36)) ([c6d76ad](https://github.com/nuxt-community/moment-module/commit/c6d76ad))
 
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/nuxt-community/moment-module/compare/v1.1.0...v1.2.0) (2019-02-08)
