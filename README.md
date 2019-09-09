@@ -99,6 +99,16 @@ export default {
 }
 ```
 
+
+### Using inside templates
+
+Instead of a filter, you can easily use `$moment` service from templates (and yes, it is reactive!).
+
+```html
+<div v-text="$moment(...)"></div>
+<div>{{ $moment(...) }}</div>
+```
+
 ## Development
 
 1. Clone this repository

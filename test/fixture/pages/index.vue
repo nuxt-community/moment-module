@@ -1,16 +1,23 @@
 <template>
   <div>
-    Works!
-    <p v-text="str" />
+    <p v-text="$moment(date)" />
   </div>
 </template>
 
 <script>
 export default {
-  asyncData(ctx) {
+  data () {
     return {
-      str: ctx.app.$moment('12-25-1995', 'MM-DD-YYYY').format('MMMM')
+      date: new Date()
     }
+  },
+  mounted () {
+    this._interval = setInterval(() => {
+      this.date = new Date()
+    })
+  },
+  beforeDestroy () {
+    clearInterval(this._interval)
   }
 }
 </script>
