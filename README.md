@@ -11,8 +11,6 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
-<p align="center"><img src="./assets/img1.png" width="600px"></p>
-
 ## Features
 
 - Remove unused Moment.js locales using [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin) for much less bundle size.
