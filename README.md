@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Efficient [Moment.js](https://momentjs.com/) integration for Nuxt.js
+> Efficient Moment.js integration for Nuxt.js
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
