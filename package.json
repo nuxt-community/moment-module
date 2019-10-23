@@ -15,8 +15,7 @@
   "main": "lib/module.js",
   "types": "types/index.d.ts",
   "scripts": {
-    "dev": "nuxt test/fixture",
-    "lint": "eslint lib test",
+    "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
   },
@@ -25,14 +24,13 @@
     "moment-locales-webpack-plugin": "^1.1.0"
   },
   "devDependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
     "@nuxtjs/eslint-config": "latest",
-    "babel-eslint": "latest",
-    "babel-jest": "latest",
+    "@nuxtjs/module-test-utils": "latest",
     "codecov": "latest",
     "eslint": "latest",
-    "get-port": "latest",
+    "husky": "latest",
     "jest": "latest",
     "nuxt-edge": "latest",
     "standard-version": "latest"

@@ -4,8 +4,7 @@
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Circle CI][circle-ci-src]][circle-ci-href]
 [![Codecov][codecov-src]][codecov-href]
-[![Dependencies][david-dm-src]][david-dm-href]
-[![Standard JS][standard-js-src]][standard-js-href]
+[![License][license-src]][license-href]
 
 > Efficient Moment.js integration for Nuxt.js
 
@@ -18,25 +17,40 @@
 
 ## Setup
 
-Install `@nuxtjs/moment` to your project:
+1. Add `@nuxtjs/moment` dependency to your project
 
 ```bash
-yarn add --dev @nuxtjs/moment
-# OR
-npm i --save-dev @nuxtjs/moment
+yarn add --dev @nuxtjs/moment # or npm install --save-dev @nuxtjs/moment
 ```
 
-- Add `@nuxtjs/moment` to the `buildModules` section of `nuxt.config.js`
+2. Add `@nuxtjs/moment` to the `buildModules` section of `nuxt.config.js`
+
+:warning: If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
+
+```js
+export default {
+  buildModules: [
+    // Simple usage
+    '@nuxtjs/moment',
+
+    // With options
+    ['@nuxtjs/moment', { /* module options */ }]
+  ]
+}
+```
+
+### Using top level options
 
 ```js
 export default {
   buildModules: [
     '@nuxtjs/moment'
-  ]
+  ],
+  moment: {
+    /* module options */
+  }
 }
 ```
-
-**NOTE:** If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ## Configuration
 
@@ -44,7 +58,7 @@ To strip all locales except `en`:
 
 ```js
 export default {
-  modules: [
+  buildModules: [
     '@nuxtjs/moment'
   ]
 }
@@ -97,7 +111,6 @@ export default {
 }
 ```
 
-
 ### Using inside templates
 
 Instead of a filter, you can easily use `$moment` service from templates (and yes, it is reactive!).
@@ -106,12 +119,6 @@ Instead of a filter, you can easily use `$moment` service from templates (and ye
 <div v-text="$moment(...)"></div>
 <div>{{ $moment(...) }}</div>
 ```
-
-## Development
-
-1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
 
 ## License
 
@@ -122,15 +129,17 @@ Thanks [Ivan Akulov](https://github.com/iamakulov) for making this awesome webpa
 Copyright (c) Nuxt Community
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/dt/@nuxtjs/moment.svg?style=flat-square
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/moment/latest.svg?style=flat-square
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/moment
-[npm-downloads-src]: https://img.shields.io/npm/v/@nuxtjs/moment/latest.svg?style=flat-square
+
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/moment.svg?style=flat-square
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/moment
+
 [circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/moment-module.svg?style=flat-square
 [circle-ci-href]: https://circleci.com/gh/nuxt-community/moment-module
+
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/moment-module.svg?style=flat-square
 [codecov-href]: https://codecov.io/gh/nuxt-community/moment-module
-[david-dm-src]: https://david-dm.org/nuxt-community/moment-module/status.svg?style=flat-square
-[david-dm-href]: https://david-dm.org/nuxt-community/moment-module
-[standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
-[standard-js-href]: https://standardjs.com
+
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/moment.svg?style=flat-square
+[license-href]: https://npmjs.com/package/@nuxtjs/moment
