@@ -32,6 +32,8 @@
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
+    "moment-fquarter": "latest",
+    "moment-strftime": "latest",
     "nuxt-edge": "latest",
     "standard-version": "latest"
   },

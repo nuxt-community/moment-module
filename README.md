@@ -96,6 +96,26 @@ export default {
 }
 ```
 
+### Plugins
+
+You can import plugins to moment. See a list of [plugins](https://momentjs.com/docs/#/plugins/)
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    plugins: [
+      'moment-strftime',
+      'moment-fquarter'
+    ]
+  }
+}
+```
+
+**Note:** Don't forget to install each plugin.
+
 ### Disable plugin
 
 This module also registers a plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using `plugin: false`.

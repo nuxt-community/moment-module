@@ -6644,6 +6644,11 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
+moment-fquarter@latest:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/moment-fquarter/-/moment-fquarter-1.0.0.tgz#90f2d8bad9047c6294ed8dd94b851ffa91c8f6db"
+  integrity sha1-kPLYutkEfGKU7Y3ZS4Uf+pHI9ts=
+
 moment-locales-webpack-plugin@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/moment-locales-webpack-plugin/-/moment-locales-webpack-plugin-1.1.0.tgz#df2f084b1ab9cb093322186b651bbed167a3a882"
@@ -6651,7 +6656,14 @@ moment-locales-webpack-plugin@^1.1.0:
   dependencies:
     lodash.difference "^4.5.0"
 
-moment@^2.24.0:
+moment-strftime@latest:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/moment-strftime/-/moment-strftime-0.5.0.tgz#0cd395058cfabb2cbdbf49a2d3758aa22093d65a"
+  integrity sha512-0gwXdJEY1nD1YMlH9nLbDl+HLMfprzfxT2+qDkl29jGgDlVHzPCdwBBN0DPgY+e3+ur7tfdngxweKYBiT80nEA==
+  dependencies:
+    moment "^2.11.2"
+
+moment@^2.11.2, moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
