@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/nuxt-community/moment-module/compare/v1.3.0...v1.4.0) (2019-10-25)
+
+
+### Features
+
+* add option to import plugins ([#45](https://github.com/nuxt-community/moment-module/issues/45)) ([cbebaa9](https://github.com/nuxt-community/moment-module/commit/cbebaa9))
+
 ## [1.3.0](https://github.com/nuxt-community/moment-module/compare/v1.2.0...v1.3.0) (2019-08-31)
 
 
