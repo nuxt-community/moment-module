@@ -90,7 +90,7 @@ export default {
     '@nuxtjs/moment'
   ],
   moment: {
-    defaultLocale: 'de'
+    defaultLocale: 'de',
     locales: ['de']
   }
 }
