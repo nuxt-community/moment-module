@@ -52,6 +52,9 @@ export default {
 }
 ```
 
+### Typescript
+Add `@nuxtjs/moment` to the `types` array in your `tsconfig.json`.
+
 ## Configuration
 
 To strip all locales except `en`:
