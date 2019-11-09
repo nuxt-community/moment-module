@@ -19,3 +19,10 @@ declare module 'vue/types/vue' {
     $moment(input?: MomentInput, format?: MomentFormatSpecification, language?: string, strict?: boolean): Moment
   }
 }
+
+declare module 'vuex' {
+  interface Store<S> {
+    $moment(input?: MomentInput, format?: MomentFormatSpecification, language?: string, strict?: boolean): Moment
+  }
+}
+  
