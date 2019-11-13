@@ -20,7 +20,7 @@ declare module 'vue/types/vue' {
   }
 }
 
-declare module 'vuex' {
+declare module 'vuex/types/index' {
   interface Store<S> {
     $moment: typeof moment
   }
