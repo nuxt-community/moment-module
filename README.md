@@ -54,7 +54,9 @@ export default {
 
 ### Typescript setup
 
-Add the types to your "types" array in tsconfig.json after the `@nuxt/vue-app` entry
+Add the types to your "types" array in tsconfig.json after the `@nuxt/types` entry.
+
+:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9. 
 
 **tsconfig.json**
 
@@ -62,7 +64,7 @@ Add the types to your "types" array in tsconfig.json after the `@nuxt/vue-app` e
 {
   "compilerOptions": {
     "types": [
-      "@nuxt/vue-app",
+      "@nuxt/types",
       "@nuxtjs/moment"
     ]
   }
@@ -70,7 +72,7 @@ Add the types to your "types" array in tsconfig.json after the `@nuxt/vue-app` e
 ```
 > **Why?**
 >
-> For typescript to be aware of the additions to the nuxt `Context`, the `vue` instance and the `vuex` store, the types need to be merged via [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) by adding `@nuxtjs/moment` to your types.
+> For typescript to be aware of the additions to the `nuxt Context`, the `vue instance` and the `vuex store`, the types need to be merged via [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) by adding `@nuxtjs/moment` to your types.
 
 ## Configuration
 
