@@ -52,8 +52,25 @@ export default {
 }
 ```
 
-### Typescript
-Add `@nuxtjs/moment` to the `types` array in your `tsconfig.json`.
+### Typescript setup
+
+Add the types to your "types" array in tsconfig.json after the `@nuxt/vue-app` entry
+
+**tsconfig.json**
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "@nuxt/vue-app",
+      "@nuxtjs/moment"
+    ]
+  }
+}
+```
+> **Why?**
+>
+> For typescript to be aware of the additions to the nuxt `Context`, the `vue` instance and the `vuex` store, the types need to be merged via [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) by adding `@nuxtjs/moment` to your types.
 
 ## Configuration
 
