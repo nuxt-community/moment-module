@@ -52,6 +52,28 @@ export default {
 }
 ```
 
+### Typescript setup
+
+Add the types to your "types" array in tsconfig.json after the `@nuxt/types` entry.
+
+:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9. 
+
+**tsconfig.json**
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "@nuxt/types",
+      "@nuxtjs/moment"
+    ]
+  }
+}
+```
+> **Why?**
+>
+> For typescript to be aware of the additions to the `nuxt Context`, the `vue instance` and the `vuex store`, the types need to be merged via [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) by adding `@nuxtjs/moment` to your types.
+
 ## Configuration
 
 To strip all locales except `en`:
