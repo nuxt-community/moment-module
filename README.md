@@ -58,7 +58,7 @@ Add the types to your "types" array in tsconfig.json after the `@nuxt/types` ent
 
 :warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9. 
 
-**tsconfig.json**
+#### tsconfig.json
 
 ```json
 {
@@ -70,6 +70,7 @@ Add the types to your "types" array in tsconfig.json after the `@nuxt/types` ent
   }
 }
 ```
+
 > **Why?**
 >
 > For typescript to be aware of the additions to the `nuxt Context`, the `vue instance` and the `vuex store`, the types need to be merged via [declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) by adding `@nuxtjs/moment` to your types.
@@ -137,6 +138,39 @@ export default {
 ```
 
 **Note:** Don't forget to install each plugin.
+
+### Timezone
+
+You can enable [moment-timezone](https://momentjs.com/timezone/) via the `timezone` option.
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    timezone: true
+  }
+}
+```
+
+You can filter time zone data and thus produce significant savings in file size.
+See all options in [moment-timezone-data-webpack-plugin](https://github.com/gilmoreorless/moment-timezone-data-webpack-plugin).
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    timezone: {
+      matchZones: /Europe\/(Belfast|London|Paris|Athens)/,
+      startYear: 2000,
+      endYear: 2030
+    }
+  }
+}
+```
 
 ### Disable plugin
 
