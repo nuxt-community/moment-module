@@ -54,7 +54,7 @@ export default {
 
 ### Typescript setup
 
-Add the types to your "types" array in tsconfig.json after the `@nuxt/types` entry.
+Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
 
 :warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9. 
 
