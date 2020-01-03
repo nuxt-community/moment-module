@@ -139,6 +139,39 @@ export default {
 
 **Note:** Don't forget to install each plugin.
 
+### Timezone
+
+You can enable [moment-timezone](https://momentjs.com/timezone/) via the `timezone` option.
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    timezone: true
+  }
+}
+```
+
+You can filter time zone data and thus produce significant savings in file size.
+See all options in [moment-timezone-data-webpack-plugin](https://github.com/gilmoreorless/moment-timezone-data-webpack-plugin).
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    timezone: {
+      matchZones: /Europe\/(Belfast|London|Paris|Athens)/,
+      startYear: 2000,
+      endYear: 2030
+    }
+  }
+}
+```
+
 ### Disable plugin
 
 This module also registers a plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using `plugin: false`.

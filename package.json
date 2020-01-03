@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "moment": "^2.24.0",
-    "moment-locales-webpack-plugin": "^1.1.2"
+    "moment-locales-webpack-plugin": "^1.1.2",
+    "moment-timezone": "^0.5.27",
+    "moment-timezone-data-webpack-plugin": "^1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
