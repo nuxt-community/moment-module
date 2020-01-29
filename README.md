@@ -172,6 +172,21 @@ export default {
 }
 ```
 
+### Set default time zone
+
+You can set a [default time zone](https://momentjs.com/timezone/docs/#/using-timezones/default-timezone/) via the `defaultTimezone` option.
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    defaultTimezone: 'America/Los_Angeles'
+  }
+}
+```
+
 ### Disable plugin
 
 This module also registers a plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using `plugin: false`.
