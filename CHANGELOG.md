@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/nuxt-community/moment-module/compare/v1.5.0...v1.6.0) (2020-02-10)
+
+
+### Features
+
+* set default time zone ([#54](https://github.com/nuxt-community/moment-module/issues/54)) ([a818d40](https://github.com/nuxt-community/moment-module/commit/a818d40e005f349de5d47ba6d61546918f1ac7c4))
+
 ## [1.5.0](https://github.com/nuxt-community/moment-module/compare/v1.4.0...v1.5.0) (2020-01-03)
 
 

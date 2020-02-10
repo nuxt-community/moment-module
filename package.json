@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/moment",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Efficient Moment.js integration for Nuxt.js",
   "repository": "nuxt-community/moment-module",
   "license": "MIT",
