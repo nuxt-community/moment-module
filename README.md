@@ -204,7 +204,7 @@ export default {
 
 ### Using inside templates
 
-Instead of a filter, you can easily use `$moment` service from templates (and yes, it is reactive!).
+You can easily use `$moment` service from templates.
 
 ```html
 <div v-text="$moment(...)"></div>
