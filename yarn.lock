@@ -7109,10 +7109,10 @@ moment-strftime@latest:
   dependencies:
     moment "^2.11.2"
 
-moment-timezone-data-webpack-plugin@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/moment-timezone-data-webpack-plugin/-/moment-timezone-data-webpack-plugin-1.1.0.tgz#6e77b0353894054c5982fc3bc65e689105629fdd"
-  integrity sha512-szKf9rbRoY9u3WNcwK6D0tdCREk/OZkcF1k163Xc5m7GcqBh28LgNVWisb4sje6/qdG3WUkFD5hJ7/lmKOkBAA==
+moment-timezone-data-webpack-plugin@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/moment-timezone-data-webpack-plugin/-/moment-timezone-data-webpack-plugin-1.2.0.tgz#360f369a02350a82b6cd5738ccc5c1a12745902a"
+  integrity sha512-QVDeHUS0MX5opy3tfg+5tehj8YedWksc0BnJsUcn7CvA5twQObxDtxVuHbJo1Unx8caSkCh0QoeEyDRBLnfDag==
   dependencies:
     find-cache-dir "^3.0.0"
     make-dir "^3.0.0"
