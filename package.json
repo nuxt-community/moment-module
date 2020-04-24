@@ -9,12 +9,12 @@
     "Alexander Lichter <manniL@gmx.net>",
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
+  "main": "lib/module.js",
+  "types": "types/index.d.ts",
   "files": [
     "lib",
     "types/*.d.ts"
   ],
-  "main": "lib/module.js",
-  "types": "types/index.d.ts",
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
     "release": "yarn test && standard-version && git push --follow-tags && npm publish",
