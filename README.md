@@ -20,7 +20,11 @@
 1. Add `@nuxtjs/moment` dependency to your project
 
 ```bash
+# if you have target: 'static' in your nuxt.config.js 
 yarn add --dev @nuxtjs/moment # or npm install --save-dev @nuxtjs/moment
+
+# if you have target: 'server' (this is the default) in your nuxt.config.js 
+yarn add @nuxtjs/moment # or npm install @nuxtjs/moment
 ```
 
 2. Add `@nuxtjs/moment` to the `buildModules` section of `nuxt.config.js`
