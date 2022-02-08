@@ -187,6 +187,22 @@ export default {
 }
 ```
 
+### Set default format
+
+You can set a [default format](https://momentjs.com/docs/#/displaying/format/) via the `defaultFormat` option.
+
+```js
+export default {
+  buildModules: [
+    '@nuxtjs/moment'
+  ],
+  moment: {
+    // Default is 'YYYY-MM-DDTHH:mm:ssZ'
+    defaultFormat: 'dddd, MMMM Do YYYY, h:mm:ss a' // "Sunday, February 14th 2010, 3:25:50 pm"
+  }
+}
+```
+
 ### Disable plugin
 
 This module also registers a plugin to include all needed locales as well as injecting moment as `$moment` to Vue context. You can disable this behaviour using `plugin: false`.
