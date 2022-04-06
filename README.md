@@ -6,7 +6,9 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Efficient Moment.js integration for Nuxt.js
+Efficient Moment.js integration for Nuxt.js
+
+> ⚠️ Moment.js is a legacy project, now in maintenance mode. In most cases, you should choose a different library. For more details and recommendations, please see [**Project Status**](https://momentjs.com/docs/#/-project-status/) in the docs. ⚠️
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
@@ -29,12 +31,17 @@ yarn add --dev @nuxtjs/moment # or npm install --save-dev @nuxtjs/moment
 export default {
   buildModules: [
     // Simple usage
-    '@nuxtjs/moment',
+    "@nuxtjs/moment",
 
     // With options
-    ['@nuxtjs/moment', { /* module options */ }]
-  ]
-}
+    [
+      "@nuxtjs/moment",
+      {
+        /* module options */
+      },
+    ],
+  ],
+};
 ```
 
 :warning: If you are using Nuxt **< v2.9** you have to install the module as a `dependency` (No `--dev` or `--save-dev` flags) and use `modules` section in `nuxt.config.js` instead of `buildModules`.
@@ -43,30 +50,25 @@ export default {
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
     /* module options */
-  }
-}
+  },
+};
 ```
 
 ### Typescript setup
 
 Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
 
-:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9. 
+:warning: Use `@nuxt/vue-app` instead of `@nuxt/types` for nuxt < 2.9.
 
 #### tsconfig.json
 
 ```json
 {
   "compilerOptions": {
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/moment"
-    ]
+    "types": ["@nuxt/types", "@nuxtjs/moment"]
   }
 }
 ```
@@ -81,23 +83,19 @@ To strip all locales except `en`:
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ]
-}
+  buildModules: ["@nuxtjs/moment"],
+};
 ```
 
 To strip all locales except `en`, `fr` and `fa`:
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
-    locales: ['fa']
-  }
-}
+    locales: ["fa"],
+  },
+};
 ```
 
 **Note:** `en` is built into Moment and can’t be removed!
@@ -109,14 +107,12 @@ int the locales you keep (or `'en'`) and will only work when using the plugin op
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
-    defaultLocale: 'de',
-    locales: ['de']
-  }
-}
+    defaultLocale: "de",
+    locales: ["de"],
+  },
+};
 ```
 
 ### Plugins
@@ -125,16 +121,11 @@ You can import plugins to moment. See a list of [plugins](https://momentjs.com/d
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
-    plugins: [
-      'moment-strftime',
-      'moment-fquarter'
-    ]
-  }
-}
+    plugins: ["moment-strftime", "moment-fquarter"],
+  },
+};
 ```
 
 **Note:** Don't forget to install each plugin.
@@ -145,13 +136,11 @@ You can enable [moment-timezone](https://momentjs.com/timezone/) via the `timezo
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
-    timezone: true
-  }
-}
+    timezone: true,
+  },
+};
 ```
 
 You can filter time zone data and thus produce significant savings in file size.
@@ -159,17 +148,15 @@ See all options in [moment-timezone-data-webpack-plugin](https://github.com/gilm
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
     timezone: {
       matchZones: /Europe\/(Belfast|London|Paris|Athens)/,
       startYear: 2000,
-      endYear: 2030
-    }
-  }
-}
+      endYear: 2030,
+    },
+  },
+};
 ```
 
 ### Set default time zone
@@ -178,13 +165,11 @@ You can set a [default time zone](https://momentjs.com/timezone/docs/#/using-tim
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
-    defaultTimezone: 'America/Los_Angeles'
-  }
-}
+    defaultTimezone: "America/Los_Angeles",
+  },
+};
 ```
 
 ### Disable plugin
@@ -193,13 +178,11 @@ This module also registers a plugin to include all needed locales as well as inj
 
 ```js
 export default {
-  buildModules: [
-    '@nuxtjs/moment'
-  ],
+  buildModules: ["@nuxtjs/moment"],
   moment: {
-    plugin: false
-  }
-}
+    plugin: false,
+  },
+};
 ```
 
 ### Using inside templates
@@ -218,17 +201,14 @@ You can easily use `$moment` service from templates.
 Copyright (c) Nuxt Community
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/moment/latest.svg
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/moment
-
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/moment.svg
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/moment
-
 [github-actions-ci-src]: https://github.com/nuxt-community/moment-module/workflows/ci/badge.svg
 [github-actions-ci-href]: https://github.com/nuxt-community/moment-module/actions?query=workflow%3Aci
-
 [codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/moment-module.svg
 [codecov-href]: https://codecov.io/gh/nuxt-community/moment-module
-
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/moment.svg
 [license-href]: https://npmjs.com/package/@nuxtjs/moment
